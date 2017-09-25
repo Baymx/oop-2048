@@ -159,7 +159,10 @@ class Left{
 						//判断两格子是否相等,并且中间是否没有空白
 						else if(board[i][k]==board[i][j]&& this.noBlokHorizontalCol(i, k, j, board) && !hasConflicted[i][k]){
 							//移动方块格子
-							showMoveAnimation(i, j, i, k);
+							setTimeout(function(){
+								showMoveAnimation(i, j, i, k);
+							},500);
+						
 							//相同的格子合并
 							board[i][k] += board[i][j];1
 							board[i][j] = 0;
@@ -232,7 +235,10 @@ class Right{
 						//判断两格子是否相等,并且中间是否没有空白
 						else if(board[i][k]==board[i][j]&& this.noBlokHorizontalCol(i, j, k, board) && !hasConflicted[i][k]){
 							//移动方块格子
-							showMoveAnimation(i, j, i, k);
+							setTimeout(function(){
+								showMoveAnimation(i, j, i, k);
+							},500);
+							
 							//相同的格子合并
 							board[i][k] += board[i][j];
 							board[i][j] = 0;
@@ -305,7 +311,10 @@ class Up{
 						}
 						else if(board[i][j]==board[k][j] && this.noBlokHorizontalRow(k, i, j, board) && !hasConflicted[k][j]){
 							//移动方块格子
-							showMoveAnimation(i, j, k, j);
+							setTimeout(function(){
+								showMoveAnimation(i, j, k, j);
+							},500);
+							
 							//相同的格子合并
 							board[k][j] += board[i][j];
 							board[i][j] = 0;
@@ -375,7 +384,10 @@ class  Down{
 						}
 						else if(board[i][j]==board[k][j] && this.noBlokHorizontalRow(i, k, j, board) && !hasConflicted[k][j] ){
 							//移动方块格子
-							showMoveAnimation(i, j, k, j);
+							setTimeout(function(){
+								showMoveAnimation(i, j, k, j);
+							},500);
+							
 							//相同的格子合并
 							board[k][j] += board[i][j];
 							board[i][j] = 0;

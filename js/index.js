@@ -30,9 +30,11 @@ function newGame(){
 				if(left.moveLeft()){
 					setTimeout(function(){
 						n.generateOneNumber();
+					},300);
+					setTimeout(function(){
 						//游戏结束的判断
 	            		s.isgameover();
-					},600)
+					},400);
 				}
 	            break;
 	        case 38://up
@@ -42,9 +44,11 @@ function newGame(){
 					setTimeout(function(){
 						n.generateOneNumber();
 						//游戏结束的判断
+					},300)
+					setTimeout(function(){
+						//游戏结束的判断
 	            		s.isgameover();
-					},600)
-					
+					},400);
 				}
 	            break;
 	        case 39://right
@@ -54,8 +58,11 @@ function newGame(){
 	        		setTimeout(function(){
 						n.generateOneNumber();
 						//游戏结束的判断
+	        		},300)
+	        		setTimeout(function(){
+						//游戏结束的判断
 	            		s.isgameover();
-	        		},600)
+					},400);
 				}
 	            break;
 	        case 40://down
@@ -65,8 +72,11 @@ function newGame(){
 	        		setTimeout(function(){
 						n.generateOneNumber();
 						//游戏结束的判断
+	        		},300)
+	        		setTimeout(function(){
+						//游戏结束的判断
 	            		s.isgameover();
-	        		},600)
+					},400);
 				}
 	            break;
 	        default :
