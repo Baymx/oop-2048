@@ -12,11 +12,11 @@ for(var i = 0;i<4;i++){
 
 //得到每个格子的位子
 function getPosTop(i, j) {
-    return 20 + i * 120;
+    return 20 + i * 95;
 }
 //得到每个格子的位子
 function getPosLeft(i, j) {
-return 20 + j * 120;
+return 20 + j * 95;
 }
 //getNumberBackgroundColor()方法来设置数字的背景色
 function getNumberBackgroundColor(number) {

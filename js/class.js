@@ -42,8 +42,8 @@ class Number{
 	            } 
             	//如果棋盘格的值不为0的话,设置数字格为高宽为75并设置背景色和前景色及数字值
 		       else {
-		            this.numberCell.css("width", "100px");
-		            this.numberCell.css("height", "100px");
+		            this.numberCell.css("width", "80px");
+		            this.numberCell.css("height", "80px");
 		            this.numberCell.css("top", getPosTop(i, j));
 		            this.numberCell.css("left", getPosLeft(i, j));
 		            this.numberCell.css("background-color", this.getNumberBackgroundColor(board[i][j]));
@@ -64,9 +64,6 @@ class Number{
 			 //定义一个死循环,完成生成随机空格子
 //			 this.timer=setInterval(function(){
 			while(true){
-				
-			 	console.log(this.randx);
-			 	console.log(this.randy);
 			 	if (board[this.randx][this.randy] == 0) {
 			 		break;
 //		           clearInterval(this.timer);
@@ -96,8 +93,8 @@ class Number{
 	    this.numberCell.text(randNumber);
 	    //设置当前的数字格的显示动画
 	    this.numberCell.animate({
-	        width: "100px",
-	        height: "100px",
+	        width: "80px",
+	        height: "80px",
 	        top: getPosTop(i, j),
 	        left: getPosLeft(i, j)
 	    }, 50);
@@ -167,7 +164,6 @@ class Left{
 							board[i][k] += board[i][j];1
 							board[i][j] = 0;
 							//成绩改变????/
-							console.log(this.score)
 							var score=this.score.getScore();
 							score += board[i][k];
 						    this.score.updateScore(score);
@@ -243,7 +239,6 @@ class Right{
 							board[i][k] += board[i][j];
 							board[i][j] = 0;
 							//成绩改变????/
-							console.log(this.score)
 							var score=this.score.getScore();
 							score += board[i][k];
 							this.score.updateScore(score);
@@ -319,7 +314,6 @@ class Up{
 							board[k][j] += board[i][j];
 							board[i][j] = 0;
 							//成绩改变????/
-							console.log(this.score)
 							var score=this.score.getScore();
 							score += board[k][j];
 						    this.score.updateScore(score);
@@ -392,7 +386,6 @@ class  Down{
 							board[k][j] += board[i][j];
 							board[i][j] = 0;
 							//成绩改变????/
-							console.log(this.score)
 							var score=this.score.getScore();
 							score += board[i][j];
 							this.score.updateScore(score);

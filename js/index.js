@@ -83,6 +83,68 @@ function newGame(){
 	            break;
 		}
 	});
+	
+	touch.on("#grid-container","swipeleft",function(e){
+		left.num=n;
+		left.score=s;
+		if(left.moveLeft()){
+			setTimeout(function(){
+			n.generateOneNumber();
+		},300);
+		setTimeout(function(){
+			//游戏结束的判断
+	        s.isgameover();
+			},400);
+		}
+		e.preventDefault();
+	});
+	touch.on("#grid-container","swiperight",function(e){
+		right.num=n;
+	    right.score=s;
+	    if(right.moveRight()){
+	       setTimeout(function(){
+				n.generateOneNumber();
+				//游戏结束的判断
+	        },300)
+	        setTimeout(function(){
+				//游戏结束的判断
+	            s.isgameover();
+			},400);
+		}
+		e.preventDefault();
+	});
+	touch.on("#grid-container","swipeup",function(e){
+		up.num=n;
+	    up.score=s;
+		if(up.moveUp()){
+			setTimeout(function(){
+				n.generateOneNumber();
+				//游戏结束的判断
+				},300)
+			setTimeout(function(){
+				//游戏结束的判断
+	            s.isgameover();
+			},400);
+		}
+		e.preventDefault();
+	});
+	touch.on("#grid-container","swipedown",function(e){
+		down.num=n;
+	    down.score=s;
+	    if(down.moveDown()){
+	        setTimeout(function(){
+				n.generateOneNumber();
+				//游戏结束的判断
+	        },300)
+	        setTimeout(function(){
+				//游戏结束的判断
+	            s.isgameover();
+			},400);
+		}
+		e.preventDefault();
+	});
+	
+	
 }
 
 function restartgame(){
