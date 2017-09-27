@@ -52,7 +52,7 @@ header p {
 
     font-family: Arial;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 40px;
     line-height: 80px;
     text-align: center;
 
@@ -75,7 +75,7 @@ header p {
     color: white;
     margin: 10px auto;
 
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 .gameover span {

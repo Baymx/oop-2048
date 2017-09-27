@@ -1,8 +1,10 @@
 window.onload=function(){
+	$("#gameover").remove();
 	newGame();
 }
-
+$("#gameover").remove();
 function newGame(){
+	$("#gameover").remove();
 	//创建类的实例
 	var g =new Grid();
 	var n =new Number();
@@ -98,7 +100,7 @@ function newGame(){
 				setTimeout(function(){
 					//游戏结束的判断
 			        s.isgameover();
-					},400);
+					},300);
 				}
 				e.preventDefault();
 			});
@@ -113,7 +115,7 @@ function newGame(){
 			        setTimeout(function(){
 						//游戏结束的判断
 			            s.isgameover();
-					},400);
+					},300);
 				}
 				e.preventDefault();
 			});
@@ -128,7 +130,7 @@ function newGame(){
 					setTimeout(function(){
 						//游戏结束的判断
 			            s.isgameover();
-					},400);
+					},300);
 				}
 				e.preventDefault();
 			});
@@ -143,7 +145,7 @@ function newGame(){
 			        setTimeout(function(){
 						//游戏结束的判断
 			            s.isgameover();
-					},400);
+					},300);
 				}
 				e.preventDefault();
 			});
@@ -157,3 +159,4 @@ function restartgame(){
     newGame();
 
 }
+

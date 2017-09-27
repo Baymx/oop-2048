@@ -471,8 +471,8 @@ class Score{
 		this.score=this.getScore();
 	    $("#grid-container").append("<div id='gameover' class='gameover'><p>本次得分</p><span>" + this.score + "</span><a href='javascript:restartgame();' id='restartgamebutton'>Restart</a></div>");
 	    var gameover = $("#gameover");
-	    gameover.css("width", "500px");
-	    gameover.css("height", "500px");
+	    gameover.css("width", "400px");
+	    gameover.css("height", "400px");
 	    gameover.css("background-color", "rgba(0, 0, 0, 0.5)");
 	}
 }
