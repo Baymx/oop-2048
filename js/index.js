@@ -149,6 +149,11 @@ function newGame(){
 				}
 				e.preventDefault();
 			});
+			touch.on("#restartgamebutton","tap",function(e){
+				$("#gameover").remove();
+   				 newGame();
+				e.preventDefault();
+			});
 					
 			e.preventDefault();
 		},false);
