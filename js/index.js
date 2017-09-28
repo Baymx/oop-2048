@@ -154,6 +154,7 @@
 			touch.on("#restartgamebutton","tap",function(e){
 				$("#gameover").remove();
    				 newGame();
+   				 console.log("1")
 				e.preventDefault();
 			});
 //		document.addEventListener("touchmove",function(e){
@@ -166,8 +167,11 @@
 $("#newgamebutton").click(function(){
 	$("#gameover").remove();
 	newGame();
-	console.log("222")
 });
+$("#grid-container").on("tap","#restartgamebutton",function(){
+	$("#gameover").remove();
+	newGame();
+})
 
 function newGame(){
 	$("#gameover").remove();
