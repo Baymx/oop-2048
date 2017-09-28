@@ -1,11 +1,5 @@
-window.onload=function(){
-	$("#gameover").remove();
-	newGame();
-}
-$("#gameover").remove();
-function newGame(){
-	$("#gameover").remove();
-	//创建类的实例
+
+//创建类的实例
 	var g =new Grid();
 	var n =new Number();
 	var left = new Left();
@@ -85,26 +79,29 @@ function newGame(){
 	            break;
 		}
 	});
-	
+	var flag=true;
 	var odiv=document.querySelector("#grid-container");
-	
 	odiv.addEventListener("touchstart",function(e){
-		
-			touch.on("#grid-container","swipeleft",function(e){
+			e.preventDefault();
+		},false);
+		touch.on("#grid-container","swipeleft",function(e){
+				console.log('swipeleft');
 				left.num=n;
 				left.score=s;
 				if(left.moveLeft()){
 					setTimeout(function(){
-					n.generateOneNumber();
-				},300);
-				setTimeout(function(){
-					//游戏结束的判断
-			        s.isgameover();
+						n.generateOneNumber();
 					},300);
+					setTimeout(function(){
+						//游戏结束的判断
+	            		s.isgameover();
+					},400);
 				}
+				console.log('over');
 				e.preventDefault();
 			});
 			touch.on("#grid-container","swiperight",function(e){
+				console.log('swiperight');
 				right.num=n;
 			    right.score=s;
 			    if(right.moveRight()){
@@ -117,36 +114,41 @@ function newGame(){
 			            s.isgameover();
 					},300);
 				}
+			    console.log('over');
 				e.preventDefault();
 			});
 			touch.on("#grid-container","swipeup",function(e){
+				console.log('swipeup');
 				up.num=n;
-			    up.score=s;
+	        	up.score=s;
 				if(up.moveUp()){
 					setTimeout(function(){
 						n.generateOneNumber();
 						//游戏结束的判断
-						},300)
+					},300)
 					setTimeout(function(){
 						//游戏结束的判断
-			            s.isgameover();
-					},300);
+	            		s.isgameover();
+					},400);
 				}
+				console.log('over');
 				e.preventDefault();
 			});
 			touch.on("#grid-container","swipedown",function(e){
+				console.log('swipedown');
 				down.num=n;
-			    down.score=s;
-			    if(down.moveDown()){
-			        setTimeout(function(){
+	        	down.score=s;
+	        	if(down.moveDown()){
+	        		setTimeout(function(){
 						n.generateOneNumber();
 						//游戏结束的判断
-			        },300)
-			        setTimeout(function(){
+	        		},300)
+	        		setTimeout(function(){
 						//游戏结束的判断
-			            s.isgameover();
-					},300);
+	            		s.isgameover();
+					},400);
 				}
+	        	console.log('over');
 				e.preventDefault();
 			});
 			touch.on("#restartgamebutton","tap",function(e){
@@ -154,9 +156,28 @@ function newGame(){
    				 newGame();
 				e.preventDefault();
 			});
-					
-			e.preventDefault();
-		},false);
+//		document.addEventListener("touchmove",function(e){
+//			e.preventDefault();
+//		},false);
+		odiv.addEventListener("touchend",function(e){
+			
+		},false)
+//点击事件
+$("#newgamebutton").click(function(){
+	$("#gameover").remove();
+	newGame();
+	console.log("222")
+});
+
+function newGame(){
+	$("#gameover").remove();
+	//初始化分数
+	g.init();
+	n.init();
+	s.init();
+	//初始化调用两个随机的数字
+	n.generateOneNumber();
+	n.generateOneNumber();
 }
 
 function restartgame(){
