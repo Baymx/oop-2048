@@ -29,6 +29,7 @@ class Number{
 	}
 	init(){
 		$(".number-cell").remove();
+		console.log("11");
 		for(var i =0; i<board.length;i++){
 			for(var j =0; j<board[i].length;j++){
 				//向棋盘格上增加数字格
@@ -62,11 +63,9 @@ class Number{
 			this.randx=this.rand(0,3);
 			this.randy=this.rand(0,3);
 			 //定义一个死循环,完成生成随机空格子
-//			 this.timer=setInterval(function(){
 			while(true){
 			 	if (board[this.randx][this.randy] == 0) {
 			 		break;
-//		           clearInterval(this.timer);
 		        }
 		    	//否则重新随机一个位置
 		        this.randx=this.rand(0,3);
@@ -387,7 +386,7 @@ class  Down{
 							board[i][j] = 0;
 							//成绩改变????/
 							var score=this.score.getScore();
-							score += board[i][j];
+							score += board[k][j];
 							this.score.updateScore(score);
 							hasConflicted[k][j]=true;
 							continue;
